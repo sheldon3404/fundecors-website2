@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="关于FUNDÉCORS - 专业大功率厚膜电阻制造商，20年行业经验，ISO9001认证，全球领先电阻供应商">
+    <meta name="keywords" content="FUNDÉCORS公司介绍,厚膜电阻制造商,电阻工厂,ISO9001认证,大功率电阻厂家">
+    <title>关于我们 - FUNDÉCORS 专业大功率厚膜电阻制造商</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="#">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 关于页面特定样式 */
+        .page-header {
+            background: linear-gradient(135deg, #4682B4 0%, #5F9EA0 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .company-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .company-text h2 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .company-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .company-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .company-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(102,126,234,0.3);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .timeline-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #667eea;
+        }
+        
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding: 40px 0;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 5%;
+        }
+        
+        .timeline-year {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            z-index: 10;
+        }
+        
+        .timeline-content h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .timeline-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .team-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            text-align: center;
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        
+        .member-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .member-position {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .member-bio {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .certifications {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .cert-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .cert-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .cert-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .cert-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .company-overview {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .company-stats {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                justify-content: flex-start;
+                padding-left: 40px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 40px);
+                margin-left: 0 !important;
+            }
+            
+            .timeline-year {
+                left: 20px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1><a href="index.html" style="text-decoration: none; color: white;">FUNDÉCORS</a></h1>
+                    <span class="tagline">专业厚膜电阻制造商</span>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="products.html">产品中心</a></li>
+                        <li><a href="about.html" class="active">关于我们</a></li>
+                        <li><a href="technology.html">技术支持</a></li>
+                        <li><a href="news.html">新闻资讯</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>关于FUNDÉCORS</h1>
+            <p>专注厚膜电阻制造20余年，致力于成为全球领先的精密电阻供应商</p>
+        </div>
+    </section>
+
+    <!-- 公司简介 -->
+    <section class="about-content">
+        <div class="container">
+            <div class="company-overview">
+                <div class="company-text">
+                    <h2>专业制造商，品质保证</h2>
+                    <p>FUNDÉCORS成立于2004年，是一家专业从事大功率厚膜电阻研发、生产、销售的高新技术企业。公司坐落于中国深圳，拥有现代化生产厂房和先进的生产设备。</p>
+                    <p>20年来，我们始终坚持"品质第一、客户至上"的经营理念，专注于厚膜电阻技术的创新与应用，为全球客户提供高品质、高性能的电阻产品。</p>
+                    <p>我们的产品广泛应用于工业控制、电力电子、汽车电子、通信设备、医疗设备、航空航天等领域，深受国内外客户的信赖与好评。</p>
+                </div>
+                <div class="company-image">
+                    <img src="images/company-building.jpg" alt="FUNDÉCORS公司大楼">
+                </div>
+            </div>
+            
+            <!-- 公司数据 -->
+            <div class="company-stats">
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">年专业经验</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">国家和地区</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">产品规格</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10000+</div>
+                    <div class="stat-label">合作客户</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 发展历程 -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>发展历程</h2>
+                <p>20年的专注与创新，见证每一步成长</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-content">
+                        <h3>公司成立</h3>
+                        <p>FUNDÉCORS在深圳成立，开始专注厚膜电阻的研发与生产</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2008</div>
+                    <div class="timeline-content">
+                        <h3>ISO9001认证</h3>
+                        <p>通过ISO9001质量管理体系认证，建立标准化生产流程</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content">
+                        <h3>技术突破</h3>
+                        <p>成功研发超低TCR厚膜电阻技术，温度系数达到±25ppm/°C</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">
+                        <h3>国际市场拓展</h3>
+                        <p>产品进入欧洲、北美市场，开始全球化布局</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h3>智能制造升级</h3>
+                        <p>引进全自动生产线，实现智能制造和数字化转型</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h3>创新再出发</h3>
+                        <p>推出新一代超精密厚膜电阻，引领行业发展新方向</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心团队 -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>核心团队</h2>
+                <p>专业团队，共创未来</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">张工程师</h3>
+                    <div class="member-position">技术总监</div>
+                    <p class="member-bio">20年电阻研发经验，主持多项技术创新项目，掌握厚膜电阻核心技术</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">李经理</h3>
+                    <div class="member-position">市场总监</div>
+                    <p class="member-bio">15年电子元件行业经验，深谙国际市场，推动品牌全球化发展</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">王工程师</h3>
+                    <div class="member-position">生产总监</div>
+                    <p class="member-bio">12年生产管理经验，精通精益生产，确保产品质量和交付时效</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">陈经理</h3>
+                    <div class="member-position">质量总监</div>
+                    <p class="member-bio">10年质量管理经验，建立完善的质量体系，产品零缺陷追求者</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 资质认证 -->
+    <section class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2>资质认证</h2>
+                <p>严格标准，品质保证</p>
+            </div>
+            
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="cert-name">ISO9001</h3>
+                    <p class="cert-desc">国际质量管理体系认证，确保产品质量的一致性和可靠性</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="cert-name">ISO14001</h3>
+                    <p class="cert-desc">环境管理体系认证，体现企业环保责任承诺</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="cert-name">IATF16949</h3>
+                    <p class="cert-desc">汽车行业质量管理体系认证，满足汽车电子应用要求</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="cert-name">RoHS</h3>
+                    <p class="cert-desc">欧盟环保认证，产品材料符合环保要求</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FUNDÉCORS</h3>
+                    <p>专业大功率厚膜电阻制造商，致力于为客户提供高品质、高性能的电阻产品。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-wechat"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>产品中心</h3>
+                    <ul>
+                        <li><a href="products.html">大功率厚膜电阻</a></li>
+                        <li><a href="products.html">精密厚膜电阻</a></li>
+                        <li><a href="products.html">高压厚膜电阻</a></li>
+                        <li><a href="products.html">定制电阻</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>技术支持</h3>
+                    <ul>
+                        <li><a href="technology.html">技术规格</a></li>
+                        <li><a href="technology.html">产品选型</a></li>
+                        <li><a href="technology.html">应用指南</a></li>
+                        <li><a href="technology.html">下载中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +86-400-888-8888</li>
+                        <li><i class="fas fa-envelope"></i> info@fundecors.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 中国广东省深圳市科技园南区</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FUNDÉCORS. All rights reserved. | <a href="#" style="color: #fff;">隐私政策</a> | <a href="#" style="color: #fff;">网站地图</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

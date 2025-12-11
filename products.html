@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FUNDÉCORS产品中心 - 大功率厚膜电阻、精密厚膜电阻、高压电阻、定制电阻产品展示">
+    <meta name="keywords" content="大功率厚膜电阻产品,厚膜电阻型号,精密电阻规格,高压电阻,FUNDÉCORS产品目录">
+    <title>产品中心 - FUNDÉCORS 专业大功率厚膜电阻</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="#">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 产品页面特定样式 */
+        .page-header {
+            background: linear-gradient(135deg, #4682B4 0%, #5F9EA0 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .filter-section {
+            background: white;
+            padding: 40px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.3);
+        }
+        
+        .products-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .product-detail {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .product-detail:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-image-detail {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .product-badge.hot {
+            background: #ff6b6b;
+        }
+        
+        .product-badge.new {
+            background: #4caf50;
+        }
+        
+        .product-badge.featured {
+            background: #ffd700;
+            color: #333;
+        }
+        
+        .product-content {
+            padding: 30px;
+        }
+        
+        .product-title {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .product-model {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .product-specs-table {
+            width: 100%;
+            margin-bottom: 25px;
+            border-collapse: collapse;
+        }
+        
+        .product-specs-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .product-specs-table td:first-child {
+            font-weight: 500;
+            color: #666;
+            width: 40%;
+        }
+        
+        .product-specs-table td:last-child {
+            color: #333;
+            font-weight: 400;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .product-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            color: #666;
+        }
+        
+        .product-features i {
+            color: #4caf50;
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-view,
+        .btn-download {
+            flex: 1;
+            text-align: center;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+        
+        .btn-view {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .btn-download {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-view:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.3);
+        }
+        
+        .btn-download:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .taobao-order-btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%) !important;
+            color: white !important;
+            border: none !important;
+        }
+        
+        .taobao-order-btn:hover {
+            background: linear-gradient(135deg, #ee5a6f 0%, #ff6b6b 100%) !important;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .filter-buttons {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1><a href="index.html" style="text-decoration: none; color: white;">FUNDÉCORS</a></h1>
+                    <span class="tagline">专业厚膜电阻制造商</span>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="products.html" class="active">产品中心</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="technology.html">技术支持</a></li>
+                        <li><a href="news.html">新闻资讯</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>产品中心</h1>
+            <p>FUNDÉCORS专业提供各种规格的大功率厚膜电阻、精密电阻、高压电阻，可根据客户需求定制特殊规格产品</p>
+        </div>
+    </section>
+
+    <!-- 产品筛选 -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">全部产品</button>
+                <button class="filter-btn" data-filter="power">大功率系列</button>
+                <button class="filter-btn" data-filter="precision">精密系列</button>
+                <button class="filter-btn" data-filter="high-voltage">高压系列</button>
+                <button class="filter-btn" data-filter="custom">定制产品</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品展示 -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="products-grid">
+                <!-- 大功率厚膜电阻 FTH系列 -->
+                <div class="product-detail" data-category="power">
+                    <div class="product-image-detail">
+                        <img src="images/products/prod1.jpg" alt="FTH系列大功率厚膜电阻">
+                        <span class="product-badge hot">热销</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">FTH系列大功率厚膜电阻</h3>
+                        <div class="product-model">型号：FTH-01 ~ FTH-50</div>
+                        
+                        <table class="product-specs-table">
+                            <tr>
+                                <td>功率范围</td>
+                                <td>5W - 1000W</td>
+                            </tr>
+                            <tr>
+                                <td>阻值范围</td>
+                                <td>1Ω - 1MΩ</td>
+                            </tr>
+                            <tr>
+                                <td>精度</td>
+                                <td>±1%, ±5%</td>
+                            </tr>
+                            <tr>
+                                <td>温度系数</td>
+                                <td>±100ppm/°C</td>
+                            </tr>
+                            <tr>
+                                <td>工作温度</td>
+                                <td>-55°C ~ +175°C</td>
+                            </tr>
+                        </table>
+                        
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> 高可靠性厚膜工艺</li>
+                            <li><i class="fas fa-check"></i> 优异散热性能</li>
+                            <li><i class="fas fa-check"></i> 多种封装形式</li>
+                            <li><i class="fas fa-check"></i> 符合RoHS环保标准</li>
+                        </ul>
+                        
+                        <div class="product-actions">
+                            <a href="#" class="btn-view" onclick="viewProduct('FTH')">查看详情</a>
+                            <a href="#" class="btn-download" onclick="downloadSpec('FTH')">下载规格书</a>
+                            <a href="#" class="btn-download taobao-order-btn" onclick="openTaobao()">淘宝下单</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 精密厚膜电阻 FTP系列 -->
+                <div class="product-detail" data-category="precision">
+                    <div class="product-image-detail">
+                        <img src="images/products/prod2.jpg" alt="FTP系列精密厚膜电阻">
+                        <span class="product-badge featured">推荐</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">FTP系列精密厚膜电阻</h3>
+                        <div class="product-model">型号：FTP-01 ~ FTP-30</div>
+                        
+                        <table class="product-specs-table">
+                            <tr>
+                                <td>功率范围</td>
+                                <td>0.5W - 10W</td>
+                            </tr>
+                            <tr>
+                                <td>阻值范围</td>
+                                <td>0.1Ω - 10MΩ</td>
+                            </tr>
+                            <tr>
+                                <td>精度</td>
+                                <td>±0.1%, ±0.5%, ±1%</td>
+                            </tr>
+                            <tr>
+                                <td>温度系数</td>
+                                <td>±50ppm/°C</td>
+                            </tr>
+                            <tr>
+                                <td>工作温度</td>
+                                <td>-55°C ~ +155°C</td>
+                            </tr>
+                        </table>
+                        
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> 超高精度阻值</li>
+                            <li><i class="fas fa-check"></i> 极低温度系数</li>
+                            <li><i class="fas fa-check"></i> 长期稳定性好</li>
+                            <li><i class="fas fa-check"></i> 适用于精密仪器</li>
+                        </ul>
+                        
+                        <div class="product-actions">
+                            <a href="#" class="btn-view" onclick="viewProduct('FTP')">查看详情</a>
+                            <a href="#" class="btn-download" onclick="downloadSpec('FTP')">下载规格书</a>
+                            <a href="#" class="btn-download taobao-order-btn" onclick="openTaobao()">淘宝下单</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 高压厚膜电阻 FHV系列 -->
+                <div class="product-detail" data-category="high-voltage">
+                    <div class="product-image-detail">
+                        <img src="images/products/prod3.jpg" alt="FHV系列高压厚膜电阻">
+                        <span class="product-badge new">新品</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">FHV系列高压厚膜电阻</h3>
+                        <div class="product-model">型号：FHV-01 ~ FHV-25</div>
+                        
+                        <table class="product-specs-table">
+                            <tr>
+                                <td>电压范围</td>
+                                <td>1kV - 50kV</td>
+                            </tr>
+                            <tr>
+                                <td>功率范围</td>
+                                <td>1W - 500W</td>
+                            </tr>
+                            <tr>
+                                <td>阻值范围</td>
+                                <td>10Ω - 10MΩ</td>
+                            </tr>
+                            <tr>
+                                <td>精度</td>
+                                <td>±1%, ±5%</td>
+                            </tr>
+                            <tr>
+                                <td>绝缘等级</td>
+                                <td>加强绝缘</td>
+                            </tr>
+                        </table>
+                        
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> 高耐压性能</li>
+                            <li><i class="fas fa-check"></i> 特殊绝缘涂层</li>
+                            <li><i class="fas fa-check"></i> 安全可靠设计</li>
+                            <li><i class="fas fa-check"></i> 适用于高压设备</li>
+                        </ul>
+                        
+                        <div class="product-actions">
+                            <a href="#" class="btn-view" onclick="viewProduct('FHV')">查看详情</a>
+                            <a href="#" class="btn-download" onclick="downloadSpec('FHV')">下载规格书</a>
+                            <a href="#" class="btn-download taobao-order-btn" onclick="openTaobao()">淘宝下单</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 定制电阻产品 -->
+                <div class="product-detail" data-category="custom">
+                    <div class="product-image-detail">
+                        <img src="images/custom-resistor.jpg" alt="定制电阻产品">
+                        <span class="product-badge featured">定制</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">定制电阻产品</h3>
+                        <div class="product-model">按需定制，满足特殊要求</div>
+                        
+                        <table class="product-specs-table">
+                            <tr>
+                                <td>定制参数</td>
+                                <td>功率、阻值、精度、TCR</td>
+                            </tr>
+                            <tr>
+                                <td>封装形式</td>
+                                <td>插针、贴片、螺栓安装</td>
+                            </tr>
+                            <tr>
+                                <td>最小起订量</td>
+                                <td>1000件/规格</td>
+                            </tr>
+                            <tr>
+                                <td>交货周期</td>
+                                <td>15-30个工作日</td>
+                            </tr>
+                            <tr>
+                                <td>技术支持</td>
+                                <td>全程跟踪服务</td>
+                            </tr>
+                        </table>
+                        
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> 完全按需定制</li>
+                            <li><i class="fas fa-check"></i> 专业技术支持</li>
+                            <li><i class="fas fa-check"></i> 小批量可接受</li>
+                            <li><i class="fas fa-check"></i> 快速交货</li>
+                        </ul>
+                        
+                        <div class="product-actions">
+                            <a href="#" class="btn-view" onclick="viewProduct('CUSTOM')">定制要求</a>
+                            <a href="contact.html" class="btn-download">立即咨询</a>
+                            <a href="#" class="btn-download taobao-order-btn" onclick="openTaobao()">淘宝下单</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FUNDÉCORS</h3>
+                    <p>专业大功率厚膜电阻制造商，致力于为客户提供高品质、高性能的电阻产品。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-wechat"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>产品中心</h3>
+                    <ul>
+                        <li><a href="products.html">大功率厚膜电阻</a></li>
+                        <li><a href="products.html">精密厚膜电阻</a></li>
+                        <li><a href="products.html">高压厚膜电阻</a></li>
+                        <li><a href="products.html">定制电阻</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>技术支持</h3>
+                    <ul>
+                        <li><a href="technology.html">技术规格</a></li>
+                        <li><a href="technology.html">产品选型</a></li>
+                        <li><a href="technology.html">应用指南</a></li>
+                        <li><a href="technology.html">下载中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +86-400-888-8888</li>
+                        <li><i class="fas fa-envelope"></i> info@fundecors.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 中国广东省深圳市科技园南区</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FUNDÉCORS. All rights reserved. | <a href="#" style="color: #fff;">隐私政策</a> | <a href="#" style="color: #fff;">网站地图</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // 产品筛选功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const products = document.querySelectorAll('.product-detail');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-filter');
+                    
+                    // 更新按钮状态
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 筛选产品
+                    products.forEach(product => {
+                        const productCategory = product.getAttribute('data-category');
+                        
+                        if (category === 'all' || productCategory === category) {
+                            product.style.display = 'block';
+                            product.style.opacity = '0';
+                            product.style.transform = 'translateY(30px)';
+                            
+                            setTimeout(() => {
+                                product.style.transition = 'all 0.5s ease';
+                                product.style.opacity = '1';
+                                product.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            product.style.opacity = '0';
+                            product.style.transform = 'translateY(30px)';
+                            
+                            setTimeout(() => {
+                                product.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+        
+        // 产品详情查看
+        function viewProduct(series) {
+            alert(`正在查看${series}系列产品详情...`);
+            // 这里可以跳转到详细页面或打开模态框
+        }
+        
+        // 下载规格书
+        function downloadSpec(series) {
+            alert(`正在下载${series}系列规格书...`);
+            // 这里可以实现实际的文件下载功能
+        }
+    </script>
+</body>
+</html>
